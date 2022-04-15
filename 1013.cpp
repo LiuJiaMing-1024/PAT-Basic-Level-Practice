@@ -1,5 +1,8 @@
-#include <stdio.h>
-#include <math.h> 
+#include <cstdio>
+#include <iostream>
+#include <cmath>
+using namespace std; 
+
 int isPrime(int num){
     int flag=1;
     for(int j=2;j<=sqrt(num);j++){
@@ -11,25 +14,26 @@ int isPrime(int num){
     return flag;
 }
 
-int main(){
+int main(void){
     int m,n,cnt=0;
-    scanf("%d %d",&m,&n);
+    cin>>m>>n;
     int i=2;
-    while(cnt<m)    if(isPrime(i++))  cnt++;
+    while(cnt<m){
+        if(isPrime(i++))  
+            cnt++;
+    }    
     i--;
-    int flag=0;
+    int enterFlag=0;
     while(cnt<=n){
         if(isPrime(i)) {
             printf("%d",i);
-            if(cnt!=n&&flag!=10)    printf(" ");
-			flag++;
-			if(flag==10){
-                printf("\n");
-                flag=0;
-            } 
+            enterFlag++;
+            if(cnt!=n&&enterFlag!=10)    printf(" ");
+			if(enterFlag==10)   printf("\n"),enterFlag=0;
 			cnt++;
         }
         i++;
     }
-    printf("\n");
+
+    return 0;
 }

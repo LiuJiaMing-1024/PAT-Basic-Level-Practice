@@ -1,59 +1,30 @@
-// 我们约会吧！ 
-// 3485djDkxh4hhGE 
-// 2984akDfkkkkggEdsb 
-// s&hgsfdk 
-// d&Hyscvnm
 
 #include <iostream>
-#include <map>
 #include <string>
 using namespace std;
 
-int main(){
-    char p[61],q[61],s[61],t[61];
-    scanf("%s",p); 
-    scanf("%s",q);   
-    scanf("%s",s);
-    scanf("%s",t);
-    int i=0;
-    char day;
-    int hour,minute;
-    //找day
-    while(p[i]!='\0'&&q[i]!='\0'){
-        if(p[i]==q[i]&&p[i]>='A'&&p[i]<='G'){
-            day=p[i];
+string s1,s2,s3,s4;
+string d[7] = {"MON","TUE","WED","THU","FRI","SAT","SUN"};
+int main(void){
+    cin>>s1>>s2>>s3>>s4;
+    bool flag1=false,flag2=false;
+    for(int i=0;i<s1.size()&&i<s2.size();i++){
+        if(!flag1&&s1[i]>='A'&&s1[i]<='G'&&s1[i]==s2[i]){
+            cout<<d[s1[i]-'A']<<" ";
+            flag1 = true;
+            continue;
+        }
+        if(flag1&&!flag2&&s1[i]==s2[i]&&s1[i]>='A'&&s1[i]<='N')
+            printf("%02d:",s1[i]-'A'+10),flag2=true;
+        if(flag1&&!flag2&&s1[i]==s2[i]&&s1[i]>='0'&&s1[i]<='9')
+            printf("%02d:",s1[i]-'0'),flag2=true;       
+    }
+
+    for(int i=0;i<s3.size()&&i<s4.size();i++){
+        if(s3[i]==s4[i]&&((s3[i]>='A'&&s3[i]<='Z')||(s3[i]>='a'&&s3[i]<='z'))){
+            printf("%02d",i);
             break;
         }
-        i++;
     }
-    //找hour
-    i++;
-     while(p[i]!='\0'&&q[i]!='\0'){
-        if(p[i]==q[i]&&p[i]>='0'&&p[i]<='9'){
-            hour=p[i]-'0';
-            break;
-        } 
-        if(p[i]==q[i]&&p[i]>='A'&&p[i]<='E'){
-            hour=p[i]-'A'+10;
-            break;
-        }
-        i++;
-    }
-    //找minute
-    i=0;
-    while(s[i]!='\0'&&(s[i]!=t[i]||s[i]<='a'||s[i]>='z')){
-        i++;
-    }
-    minute=i;
-    std::map<char,char*> d={{'A',"MON"},
-                            {'B',"TUE"},
-                            {'C',"WED"},
-                            {'D',"THU"},
-                            {'E',"FRI"},
-                            {'F',"SAT"},
-                            {'G',"SUN"}
-                            };
-    printf("%s ",d[day]);
-    printf("%02d:%02d",hour,minute);
-    
+    return 0;
 }

@@ -28,6 +28,9 @@
     "**/.vscode/**"
   ],
   "files.associations": {
-    "iostream": "cpp"
-  }
+    "iostream": "cpp",
+    "cmath": "cpp",
+    "algorithm": "cpp"
+  },
+  "C_Cpp.errorSquiggles": "Disabled"
 }
