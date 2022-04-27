@@ -34,7 +34,10 @@
     "*.tcc": "cpp",
     "string": "cpp",
     "string_view": "cpp",
-    "ostream": "cpp"
+    "ostream": "cpp",
+    "random": "cpp",
+    "limits": "cpp",
+    "array": "cpp"
   },
   "C_Cpp.errorSquiggles": "Disabled"
 }

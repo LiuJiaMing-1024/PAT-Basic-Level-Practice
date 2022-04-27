@@ -1,11 +1,23 @@
 #include <iostream>
 #include <string>
 #include <algorithm>
+#include <vector>
 using namespace std;
 
-int main(){
-    int a[4] = {0,1,2,3};
-    reverse(a+1,a+3);
+    bool isIdealPermutation(vector<int>& nums) {
+        int maxNum=nums[0];
+        for(int i=2;i<nums.size();i++){
+            if(maxNum>nums[i])return false;
+            maxNum=max(maxNum,nums[i-1]);
+        }
+        return true;
+    }
 
-    for(int i=0;i<4;i++)    cout<< a[i]<<" ";
+
+int main(){
+    vector<int> v;
+    v.push_back();
+    if(isIdealPermutation(v))
+        cout<<1;
+    vector<int> v1{}
 }
