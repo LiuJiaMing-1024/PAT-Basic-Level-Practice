@@ -3,7 +3,7 @@
 #include <algorithm>
 #include <vector>
 using namespace std;
-
+//修改了点东西
     bool isIdealPermutation(vector<int>& nums) {
         int maxNum=nums[0];
         for(int i=2;i<nums.size();i++){
